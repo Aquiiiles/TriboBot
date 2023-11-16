@@ -5,7 +5,7 @@ Bem-vindo ao **TriboBot**! Este é um bot Discord desenvolvido em JavaScript, cr
 ## Funcionalidades
 
 - **Comando `/ping`:**
-  - Tem uma incrivel resposta!.
+  - Tem uma incrivel resposta!
 
 - **Comando `/git`:**
   - Exibe uma mensagem embutida com informações sobre comandos Git.
