@@ -13,7 +13,7 @@ Bem-vindo ao **TriboBot**! Este é um bot Discord desenvolvido em JavaScript, cr
 - **Comando `/join`:**
   - Entra no canal de voz que voce esta conectado.
 
-- **Comando `/play + url``:**
+- **Comando `/play + url`:**
   - Toca qualquer musica desejada conectada com o servidor.
 
 ## Como Usar
