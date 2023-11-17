@@ -10,8 +10,11 @@ Bem-vindo ao **TriboBot**! Este é um bot Discord desenvolvido em JavaScript, cr
 - **Comando `/git`:**
   - Exibe uma mensagem embutida com informações sobre comandos Git.
 
-- **Comando `/playlist`:**
-  - Mostra uma incrível playlist para animar o seu servidor.
+- **Comando `/join`:**
+  - Entra no canal de voz que voce esta conectado.
+
+- **Comando `/play + url:**
+  - Toca qualquer musica desejada conectada com o servidor.
 
 ## Como Usar
 
@@ -36,7 +39,8 @@ Bem-vindo ao **TriboBot**! Este é um bot Discord desenvolvido em JavaScript, cr
 
 - `/ping`: Tem uma resposta incrivel!  
 - `/git`: Exibe informações sobre comandos Git.
-- `/playlist`: Mostra uma playlist incrível.
+- `/join`: Entra no canal de voz desejado.
+- `/play + url: Toca a musica desejada`
 
 ## Contribuição
 

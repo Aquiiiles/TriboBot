@@ -1,39 +1,45 @@
-const { REST, Routes } = require("discord.js")
+// deploy-commands.js
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
+const fs = require('fs');
+const path = require('path');
 
-// dotenv
-const dotenv = require('dotenv')
-dotenv.config()
-const { TOKEN, CLIENT_ID, GUILD_ID } = process.env
+const dotenv = require('dotenv');
+dotenv.config();
 
-// importação dos comandos
-const fs = require("node:fs")
-const path = require("node:path")
-const commandsPath = path.join(__dirname, "commands")
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
+const { TOKEN, CLIENT_ID, GUILD_ID } = process.env;
 
-const commands = []
+// Remova a linha abaixo se você não estiver usando o módulo 'playlist'
+// const playlist = require('./playlist');
 
-for (const file of commandFiles) { 
-   const command = require(`./commands/${file}`)
-   commands.push(command.data.toJSON())
-}
+// Ajuste esta parte conforme necessário para definir seus comandos manualmente
+const commands = [
+  {
+    name: 'command1',
+    description: 'Description for command1',
+    // ... outros campos
+  },
+  {
+    name: 'command2',
+    description: 'Description for command2',
+    // ... outros campos
+  },
+  // ... adicione mais comandos conforme necessário
+];
 
-// instância REST
-const rest = new REST({version: "10"}).setToken(TOKEN);
+const rest = new REST({ version: '9' }).setToken(TOKEN);
 
-// deploy
 (async () => {
-    try {
-        console.log(`Resentando ${commands.length} comandos...`)
-    
-        // PUT
-        const data = await rest.put(
-            Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
-            {body: commands}
-        )
-            console.log("Comandos registrados com sucesso!")
-    }
-    catch (error){
-        console.error(error)
-    }
-})()
+  try {
+    console.log('Started refreshing application (/) commands.');
+
+    await rest.put(
+      Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
+      { body: commands },
+    );
+
+    console.log('Successfully reloaded application (/) commands.');
+  } catch (error) {
+    console.error(error);
+  }
+})();
